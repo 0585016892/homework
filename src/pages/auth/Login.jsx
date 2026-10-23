@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, Form, Input, Typography, Alert, App as AntApp } from "antd";
+import { Alert, Button, Form, Input, Typography, App as AntApp } from "antd";
 import {
   ArrowRight,
   CheckCircle2,
@@ -8,9 +8,11 @@ import {
   LockKeyhole,
   Mail,
   Sparkles,
+  Users,
 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import "./Login.css";
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -47,7 +49,9 @@ export default function Login() {
           ? requestedPath?.startsWith("/admin")
           : requestedPath?.startsWith("/member");
 
-      navigate(validPath ? requestedPath : defaultPath, { replace: true });
+      navigate(validPath ? requestedPath : defaultPath, {
+        replace: true,
+      });
     } catch (error) {
       const responseData = error.response?.data;
 
@@ -62,89 +66,110 @@ export default function Login() {
   };
 
   return (
-    <div className="login-page">
-      <div className="login-decoration login-decoration-one" />
-      <div className="login-decoration login-decoration-two" />
+    <main className="home-login-page">
+      <div className="home-login-glow home-login-glow-one" />
+      <div className="home-login-glow home-login-glow-two" />
 
-      <div className="login-shell">
-        <section className="login-intro">
-          <div className="brand-lockup">
-            <div className="brand-logo">
-              <House size={26} strokeWidth={2.2} />
-            </div>
-            <div>
-              <div className="brand-name">Việc nhà</div>
-              <div className="brand-caption">HOME TASK</div>
-            </div>
-          </div>
-
-          <div className="login-intro-content">
-            <span className="eyebrow">
-              <Sparkles size={15} />
-              CÙNG NHAU CHĂM SÓC TỔ ẤM
+      <div className="home-login-shell">
+        {/* Khu vực giới thiệu */}
+        <section className="home-login-intro">
+          <a
+            className="home-login-brand"
+            href="/"
+            aria-label="Việc nhà - Trang chủ"
+          >
+            <span className="home-login-brand-icon">
+              <House size={25} strokeWidth={2.3} />
             </span>
 
-            <Title className="login-headline">
-              Việc nhỏ mỗi ngày,
+            <span className="home-login-brand-text">
+              <strong>Việc nhà</strong>
+              <small>HOME TASK</small>
+            </span>
+          </a>
+
+          <div className="home-login-intro-body">
+            <div className="home-login-eyebrow">
+              <Sparkles size={15} />
+              <span>CÙNG NHAU CHĂM SÓC TỔ ẤM</span>
+            </div>
+
+            <Title className="home-login-headline">
+              Nhà là nơi
               <br />
-              <span>ấm áp mỗi nhà.</span>
+              <span>cùng nhau sẻ chia.</span>
             </Title>
 
-            <Paragraph className="login-description">
-              Quản lý công việc gia đình thật đơn giản. Phân công rõ ràng, theo
-              dõi tiến độ và ghi nhận những đóng góp của từng thành viên.
+            <Paragraph className="home-login-description">
+              Phân công công việc dễ dàng, theo dõi tiến độ và ghi nhận những
+              đóng góp của mỗi thành viên trong gia đình.
             </Paragraph>
 
-            <div className="login-benefits">
-              <div className="login-benefit">
-                <div className="benefit-icon">
-                  <ClipboardCheck size={19} />
-                </div>
+            <div className="home-login-feature-list">
+              <div className="home-login-feature">
+                <span className="home-login-feature-icon">
+                  <ClipboardCheck size={20} />
+                </span>
                 <div>
                   <Text strong>Lịch việc rõ ràng</Text>
-                  <Text className="benefit-description">
+                  <Text className="home-login-feature-desc">
                     Biết hôm nay cần làm gì.
                   </Text>
                 </div>
+                <CheckCircle2 className="home-login-feature-check" size={19} />
               </div>
 
-              <div className="login-benefit">
-                <div className="benefit-icon">
-                  <CheckCircle2 size={19} />
-                </div>
+              <div className="home-login-feature">
+                <span className="home-login-feature-icon">
+                  <Users size={20} />
+                </span>
                 <div>
-                  <Text strong>Ghi nhận minh bạch</Text>
-                  <Text className="benefit-description">
-                    Theo dõi việc hoàn thành và phần thưởng.
+                  <Text strong>Cùng nhau đóng góp</Text>
+                  <Text className="home-login-feature-desc">
+                    Chia sẻ việc nhà công bằng hơn.
                   </Text>
                 </div>
+                <CheckCircle2 className="home-login-feature-check" size={19} />
+              </div>
+            </div>
+
+            <div className="home-login-quote">
+              <span className="home-login-quote-mark">“</span>
+              <div>
+                <strong>Một mái nhà, cùng nhau sẻ chia.</strong>
+                <span>Những điều nhỏ tạo nên hạnh phúc lớn.</span>
               </div>
             </div>
           </div>
 
-          <div className="login-footer-note">
-            <span className="footer-dot" />
-            Một mái nhà, cùng nhau sẻ chia.
+          <div className="home-login-intro-footer">
+            <span className="home-login-footer-dot" />
+            Không gian riêng dành cho gia đình bạn
           </div>
         </section>
 
-        <section className="login-form-panel">
-          <div className="mobile-brand">
-            <div className="brand-logo">
+        {/* Khu vực đăng nhập */}
+        <section className="home-login-panel">
+          <div className="home-login-mobile-brand">
+            <span className="home-login-brand-icon">
               <House size={23} />
-            </div>
-            <span className="brand-name">Việc nhà</span>
+            </span>
+            <span>Việc nhà</span>
           </div>
 
-          <div className="login-form-content">
-            <div className="login-welcome">CHÀO MỪNG BẠN TRỞ LẠI</div>
+          <div className="home-login-form-wrap">
+            <div className="home-login-form-symbol">
+              <LockKeyhole size={23} />
+            </div>
 
-            <Title level={2} className="login-form-title">
+            <div className="home-login-welcome">CHÀO MỪNG BẠN TRỞ LẠI</div>
+
+            <Title level={1} className="home-login-form-title">
               Đăng nhập
             </Title>
 
-            <Paragraph className="login-form-subtitle">
-              Nhập thông tin tài khoản để tiếp tục.
+            <Paragraph className="home-login-form-subtitle">
+              Đăng nhập để tiếp tục quản lý công việc gia đình.
             </Paragraph>
 
             <Form
@@ -154,63 +179,78 @@ export default function Login() {
               onFinish={handleSubmit}
               size="large"
               autoComplete="on"
+              className="home-login-form"
             >
               <Form.Item
                 label="Địa chỉ email"
                 name="email"
                 rules={[
-                  { required: true, message: "Vui lòng nhập email." },
-                  { type: "email", message: "Email không đúng định dạng." },
+                  {
+                    required: true,
+                    message: "Vui lòng nhập email.",
+                  },
+                  {
+                    type: "email",
+                    message: "Email không đúng định dạng.",
+                  },
                 ]}
               >
                 <Input
-                  prefix={<Mail size={18} className="input-icon" />}
+                  prefix={<Mail size={18} />}
                   placeholder="name@example.com"
                   autoComplete="username"
+                  inputMode="email"
+                  autoCapitalize="none"
+                  spellCheck={false}
                 />
               </Form.Item>
 
               <Form.Item
                 label="Mật khẩu"
                 name="password"
-                rules={[{ required: true, message: "Vui lòng nhập mật khẩu." }]}
+                rules={[
+                  {
+                    required: true,
+                    message: "Vui lòng nhập mật khẩu.",
+                  },
+                ]}
               >
                 <Input.Password
-                  prefix={<LockKeyhole size={18} className="input-icon" />}
+                  prefix={<LockKeyhole size={18} />}
                   placeholder="Nhập mật khẩu"
                   autoComplete="current-password"
                 />
               </Form.Item>
 
-              <Form.Item className="login-submit-item">
+              <Form.Item className="home-login-submit-item">
                 <Button
                   type="primary"
                   htmlType="submit"
                   block
                   loading={loading}
-                  className="login-submit-button"
+                  className="home-login-submit"
                 >
-                  Đăng nhập
-                  <ArrowRight size={18} />
+                  <span>Đăng nhập</span>
+                  {!loading && <ArrowRight size={18} />}
                 </Button>
               </Form.Item>
             </Form>
 
             <Alert
-              className="login-security-note"
+              className="home-login-security"
               type="info"
               showIcon
               message="Tài khoản được cấp bởi quản trị viên gia đình."
             />
 
-            <div className="login-form-bottom">
+            <div className="home-login-form-footer">
               <span>Việc nhà</span>
-              <span>•</span>
-              <span>Quản lý việc nhà dễ dàng</span>
+              <span className="home-login-footer-separator">·</span>
+              <span>Chăm nhà bằng sự sẻ chia</span>
             </div>
           </div>
         </section>
       </div>
-    </div>
+    </main>
   );
 }

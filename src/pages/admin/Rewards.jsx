@@ -281,7 +281,7 @@ export default function Rewards() {
     modal.confirm({
       title: `Chốt thưởng tháng ${selectedMonth.format("MM/YYYY")}?`,
       content:
-        "Hệ thống sẽ tạo hoặc cập nhật danh sách thưởng theo số công việc đã được duyệt. Hãy kiểm tra quy tắc chốt thưởng của backend trước khi xác nhận.",
+        "Hệ thống sẽ tạo hoặc cập nhật danh sách thưởng theo số công việc hoàn thành trong tháng đã chọn. Các khoản đã thanh toán sẽ được giữ nguyên.",
       okText: "Chốt thưởng",
       cancelText: "Hủy",
       okButtonProps: { danger: false },
@@ -289,10 +289,25 @@ export default function Rewards() {
         setSettling(true);
 
         try {
-          await rewardApi.settle({ month });
-          message.success("Đã gửi yêu cầu chốt thưởng.");
+          const payload = {
+            year: selectedMonth.year(),
+            month: selectedMonth.month() + 1,
+          };
+
+          console.log("[REWARD] Chốt thưởng:", payload);
+
+          const response = await rewardApi.settle(payload);
+
+          console.log("[REWARD] Kết quả chốt thưởng:", response);
+
+          message.success(
+            response?.data?.message || "Đã chốt thưởng tháng thành công.",
+          );
+
           await loadData();
         } catch (error) {
+          console.error("[REWARD] Lỗi chốt thưởng:", error);
+
           message.error(getErrorMessage(error));
           throw error;
         } finally {
@@ -301,7 +316,6 @@ export default function Rewards() {
       },
     });
   };
-
   const handleMarkPaid = (reward) => {
     modal.confirm({
       title: "Xác nhận thanh toán thưởng",
