@@ -1,0 +1,484 @@
+.my-tasks-page {
+  width: 100%;
+  min-width: 0;
+}
+
+.my-tasks-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.my-tasks-heading .page-title {
+  margin: 4px 0;
+  color: #173b5e;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.my-tasks-heading .page-description {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+.my-tasks-refresh {
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.my-tasks-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  border-radius: 18px;
+  color: #fff;
+  background: linear-gradient(115deg, #087f45 0%, #00a650 65%, #35bd78 100%);
+}
+
+.my-tasks-banner-label {
+  color: #d8ffe8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.my-tasks-banner h2 {
+  margin: 7px 0 5px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.my-tasks-banner p {
+  margin: 0;
+  color: #e4fff0;
+  font-size: 13px;
+}
+
+.my-tasks-banner-icon {
+  display: flex;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 17px;
+  color: #fff;
+  background: rgb(255 255 255 / 15%);
+}
+
+.my-tasks-stats {
+  margin-bottom: 14px;
+}
+
+.my-task-stat.ant-card {
+  height: 100%;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgb(23 59 94 / 4%);
+}
+
+.my-task-stat .ant-card-body {
+  padding: 14px;
+}
+
+.my-task-stat-icon {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 11px;
+}
+
+.stat-blue {
+  color: #3576d3;
+  background: #eaf2ff;
+}
+
+.stat-green {
+  color: #16844a;
+  background: #e7f8ed;
+}
+
+.stat-orange {
+  color: #c17b15;
+  background: #fff4df;
+}
+
+.my-task-stat .ant-typography {
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.my-task-stat-value {
+  margin-top: 4px;
+  color: #173b5e;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.my-tasks-filter.ant-card {
+  margin-bottom: 22px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.my-tasks-filter .ant-card-body {
+  padding: 14px;
+}
+
+.my-tasks-filter-grid {
+  display: grid;
+  grid-template-columns: 180px 190px minmax(180px, 1fr);
+  gap: 10px;
+}
+
+.my-tasks-filter-grid .ant-picker,
+.my-tasks-filter-grid .ant-select,
+.my-tasks-filter-grid .ant-input-affix-wrapper {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.my-tasks-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.my-tasks-section-heading h2 {
+  margin: 0 0 4px;
+  color: #173b5e;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.my-tasks-section-heading p {
+  margin: 0;
+  color: #8491a3;
+  font-size: 12px;
+}
+
+.my-task-card.ant-card {
+  height: 100%;
+  cursor: pointer;
+  border: 1px solid #edf1f5;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgb(23 59 94 / 3%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.my-task-card.ant-card:hover {
+  transform: translateY(-2px);
+  border-color: #bde8ce;
+  box-shadow: 0 8px 24px rgb(23 59 94 / 8%);
+}
+
+.my-task-card .ant-card-body {
+  padding: 17px;
+}
+
+.my-task-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 13px;
+}
+
+.my-task-card-icon {
+  display: flex;
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #078b48;
+  background: #e8f8ee;
+}
+
+.my-task-card-top .ant-tag {
+  margin-inline-end: 0;
+  border-radius: 7px;
+  font-size: 11px;
+}
+
+.my-task-card h3 {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0 0 7px;
+  color: #173b5e;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+}
+
+.my-task-card-description {
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: 38px;
+  margin: 0 0 14px;
+  color: #7a8798;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+}
+
+.my-task-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.my-task-card-meta span,
+.my-task-detail,
+.my-task-upload-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.my-task-card-meta span {
+  color: #728096;
+  font-size: 12px;
+}
+
+.my-task-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 13px;
+}
+
+.my-task-detail {
+  color: #078b48;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.my-task-upload-hint {
+  color: #c17b15;
+  font-size: 11px;
+}
+
+.my-task-card-footer .ant-btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.my-tasks-empty.ant-card {
+  border-radius: 14px;
+}
+
+.my-tasks-error {
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .my-tasks-filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .my-tasks-search {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .my-tasks-heading {
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .my-tasks-heading .page-eyebrow {
+    font-size: 9px;
+  }
+
+  .my-tasks-heading .page-title {
+    font-size: 23px;
+    line-height: 1.3;
+  }
+
+  .my-tasks-heading .page-description {
+    max-width: 260px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .my-tasks-refresh {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .my-tasks-refresh > span:not(.ant-btn-icon) {
+    display: none;
+  }
+
+  .my-tasks-banner {
+    padding: 16px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+  }
+
+  .my-tasks-banner-label {
+    font-size: 9px;
+  }
+
+  .my-tasks-banner h2 {
+    max-width: 240px;
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .my-tasks-banner p {
+    max-width: 240px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .my-tasks-banner-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .my-tasks-banner-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .my-tasks-stats {
+    margin-bottom: 10px;
+  }
+
+  .my-task-stat .ant-card-body {
+    padding: 10px;
+  }
+
+  .my-task-stat-icon {
+    width: 29px;
+    height: 29px;
+    margin-bottom: 7px;
+    border-radius: 9px;
+  }
+
+  .my-task-stat .ant-typography {
+    min-height: 30px;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .my-task-stat-value {
+    font-size: 22px;
+  }
+
+  .my-tasks-filter.ant-card {
+    margin-bottom: 18px;
+    border-radius: 12px;
+  }
+
+  .my-tasks-filter .ant-card-body {
+    padding: 10px;
+  }
+
+  .my-tasks-filter-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .my-tasks-filter-grid .ant-picker,
+  .my-tasks-filter-grid .ant-select,
+  .my-tasks-filter-grid .ant-input-affix-wrapper {
+    height: 38px;
+    font-size: 12px;
+  }
+
+  .my-tasks-search {
+    grid-column: 1 / -1;
+  }
+
+  .my-tasks-section-heading {
+    margin-bottom: 10px;
+  }
+
+  .my-tasks-section-heading h2 {
+    font-size: 16px;
+  }
+
+  .my-tasks-section-heading p {
+    font-size: 11px;
+  }
+
+  .my-task-card .ant-card-body {
+    padding: 14px;
+  }
+
+  .my-task-card-top {
+    margin-bottom: 10px;
+  }
+
+  .my-task-card-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  .my-task-card h3 {
+    font-size: 15px;
+  }
+
+  .my-task-card-description {
+    min-height: auto;
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .my-task-card-meta {
+    padding-bottom: 11px;
+  }
+
+  .my-task-card-footer {
+    padding-top: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .my-task-card.ant-card {
+    transition: none;
+  }
+}
